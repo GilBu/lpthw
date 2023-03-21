@@ -4,7 +4,11 @@ script, filename = argv
 
 print(f"We're going to erase {filename}.")
 print("If you don't want that, hit CTRL-C (^C).")
-print("If you do wsant that, hit RETURN.")
+print("If you do want that, hit RETURN.")
+
+target = open(filename, 'r')
+content = target.read()
+print(f"It's contents are \n{content}.")
 
 input("?")
 
