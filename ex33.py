@@ -1,9 +1,8 @@
 
 def list_loop(num, increase):
-    i = 0
     numbers = []
 
-    while i < num:
+    for i in range(num):
         print(f"At the top i is {i}")
         numbers.append(i)
 
