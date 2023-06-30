@@ -9,9 +9,28 @@ keep track to player's stats health, attack, defense
 
 '''
 
-attack = 10
+player_attack = 10
+player_health = 100
+player_defense = 10
 def treasure_room():
-    print("")
+    print("You found a treasure room!/nWhat will you take?/n1. Sword/n2. Armor/n3. Golden Apple")
+
+    choice = input("> ")
+
+    try:
+        how_much = int(choice)
+    except ValueError:
+        dead("Man, learn to type a number.")
+
+    if(choice == 1):
+        player_attack += 50
+    elif(choice == 2):
+        player_defense += 50
+    elif(choice == 3):
+        player_health += 100
+    else:
+        print("You didn't get anything.")
+    
 
 
 def monster_room():
