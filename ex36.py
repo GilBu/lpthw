@@ -12,6 +12,14 @@ keep track to player's stats health, attack, defense
 player_attack = 10
 player_health = 100
 player_defense = 10
+
+dungeon = [[1,1,2,0,0],
+            [2,1,1,1,2],
+            [0,0,1,2,0],
+            [2,1,1,0,0],
+            [0,0,1,1,3]]
+x = 0
+y = 0
 def treasure_room():
     print("You found a treasure room!/nWhat will you take?/n1. Sword/n2. Armor/n3. Golden Apple")
 
@@ -30,8 +38,6 @@ def treasure_room():
         player_health += 100
     else:
         print("You didn't get anything.")
-    
-
 
 def monster_room():
     print("")
@@ -53,6 +59,25 @@ def boss_room():
         health -= attack
     else:
         boss_room()
+
+def no_room():
+
+
+def room(room_num):
+    if room_num = 1:
+        return monster_room()
+    elif room_num = 2:
+        return treasure_room()
+    elif room_num = 3:
+        return boss_room()
+    else:
+        return no_room()
+
+def location(dir_x, dir_y):
+    x += dir_x
+    y += dir_y
+
+    return room(dungeon[x,y])
 
 def dead(why):
     print(why, "Try again")
